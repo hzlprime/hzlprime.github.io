@@ -1,15 +1,203 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hazal İnce | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload forces the browser to download the font immediately with highest priority -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" as="style">
+  <!-- display=block prevents fallback text flashing -->
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" rel="stylesheet">
+</head>
+<body>
 
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
+  <!-- Floating Navigation Bar -->
+  <header class="navbar">
+    <div class="site-container nav-inner">
+      <div class="brand">
+        <div class="brand-name">Hazal İnce</div>
+        <div class="brand-subtitle">Portfolio Website</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#missions" class="nav-link">MISSIONS</a>
+        <a href="#player" class="nav-link">PLAYER</a>
+        <a href="#map" class="nav-link">MAP</a>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <!-- first add the p5 library -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.min.js"></script>
-    <!-- fsecond add the p5 sketch -->
-    <script src="sketchp5.js"></script>
-  </body>
+  <!-- MAIN WRAPPER -->
+  <main class="page-layout site-container">
 
+    <!-- CONTAINER 1: Hero Block -->
+    <section class="hero-block-container">
+      
+      <!-- Top Row: Year Label -->
+      <div class="hero-year-row">
+        <span class="year-label">2026</span>
+      </div>
+
+      <!-- Center Grid Stack: Avatar & Portfolio Text -->
+      <div class="hero-graphics-grid">
+        <img src="images/cover_avatar.png" alt="Avatar" class="cover_avatar-img">
+        <img src="images/cover_text_portfolio.png" alt="PORTFOLIO" class="cover_text_portfolio-img">
+      </div>
+
+      <!-- Bottom Row: Author Name & Disciplines -->
+      <div class="hero-meta-row">
+        <span class="author-label">Hazal İnce</span>
+        <span class="discipline-label">Game Arts | Audio-visual Arts | Architecture</span>
+      </div>
+
+    </section>
+
+    <!-- CONTAINER 2: 3-Column Projects Showcase Grid -->
+    <section id="missions" class="showcase-block-container">
+      
+      <!-- COLUMN 1: Games & Cinema -->
+      <div class="category-column">
+        <h2 class="category-title">Games & Cinema</h2>
+        
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Mate'Morphosis" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Mate'Morphosis</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Thus Spoke The Donke" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Thus Spoke The Donke</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="KraZ-258" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">KraZ-258</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Creature" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Creature</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Skeleton Animation" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Skeleton Animation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Interactive Design -->
+      <div class="category-column">
+        <h2 class="category-title">Interactive Design</h2>
+        
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Monsanto Phantoms" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Monsanto Phantoms</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Pokemon Fusion with ML" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Pokemon Fusion with ML</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Mind e-Scape" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Mind e-Scape</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="design.Unbound" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">design.Unbound</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMN 3: Architecture -->
+      <div class="category-column">
+        <h2 class="category-title">Architecture</h2>
+        
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Beyoglu Commons" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Beyoglu Commons</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Ittai Gaia 4.0" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Ittai Gaia 4.0</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="4D2" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">4D2</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="City in Sequence" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">City in Sequence</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="images/project_thumbnail.png" alt="Entre la Ciudad y el Huerto" class="project-img">
+            <div class="project-overlay"></div>
+            <span class="project-title">Entre la Ciudad y el Huerto</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Static Footer -->
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div class="footer-text">Portfolio Website . Hazal Ince</div>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://artstation.com" target="_blank" class="social-icon"><i class="fa-brands fa-artstation"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>

@@ -1,0 +1,336 @@
+/* Universal Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll; /* Forces vertical scrollbar to exist immediately, stopping canvas shifts */
+  background-color: #0b0e14;
+  background-image: url('images/bg_long.jpg');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+/* Page Setup */
+body {
+  font-family: 'Oxanium', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* GLOBAL SITE CONTAINER */
+.site-container {
+  width: 92%; /* Increased from 85% to use more screen width */
+  max-width: none; /* Increased from 1400px so it stretches wider on large displays */
+  margin: 0 auto;
+}
+
+/* Floating Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.8;
+  color: #cccccc;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 48px;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* --- MAIN PAGE LAYOUT --- */
+.page-layout {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px; 
+  padding-bottom: 120px;
+}
+
+/* ==========================================================
+   CONTAINER 1: HERO BLOCK
+   ========================================================== */
+.hero-block-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  position: relative;
+}
+
+.hero-year-row {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  z-index: 10;
+}
+
+.year-label {
+  font-size: clamp(1.2rem, 2.5vw, 2rem); /* Scales between 1.2rem on small screens and 2rem on large screens */
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.hero-graphics-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.cover_avatar-img,
+.cover_text_portfolio-img {
+  grid-area: 1 / 1;
+}
+
+.cover_avatar-img {
+  width: 42%;
+  max-width: 580px;
+  height: auto;
+  z-index: 6;
+  margin-bottom: 4%;
+}
+
+.cover_text_portfolio-img {
+  width: 100%;
+  height: auto;
+  z-index: 4;
+}
+
+.hero-meta-row {
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: clamp(0.8rem, 1.2vw, 4rem); /* Scales smoothly as the window shrinks */
+  letter-spacing: 0.06em;
+  color: #cccccc;
+  z-index: 10;
+}
+
+.author-label {
+  font-weight: 400;
+}
+
+.discipline-label {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* ==========================================================
+   CONTAINER 2: 3-COLUMN PROJECTS SHOWCASE GRID
+   ========================================================== */
+.showcase-block-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.category-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.project-card {
+  width: 100%;
+}
+
+/* Image wrapper holding the image, gradient overlay, and sliding title */
+.project-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #111622;
+}
+
+/* The Zooming Image */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-img-wrapper:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* Gradient Overlay */
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project-img-wrapper:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Sliding Project Title */
+.project-title {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  right: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-align: left;
+  z-index: 3;
+  
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-img-wrapper:hover .project-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer Section */
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .site-container {
+    width: 92%;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  /* Keep it as a row or let items align to their own sides */
+  .hero-meta-row {
+    flex-direction: row; /* Keeps your author on the left and disciplines on the right */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* If the text is too long and overlaps on tiny screens, you can right-align the discipline label specifically: */
+  .discipline-label {
+    text-align: right;
+  }
+  
+  .page-layout {
+    gap: 60px;
+  }
+}
