@@ -38,7 +38,7 @@
 }
 
 .project-hero-media {
-  width: clamp(100%, 85%, 80%);
+  width: clamp(400px, 90%, 1100px);
   aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
@@ -147,7 +147,7 @@
 }
 
 .video-aspect-wrapper {
-  width: clamp(100%, 85%, 80%);
+  width: clamp(400px, 90%, 1100px);
   aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
