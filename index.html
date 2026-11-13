@@ -7,24 +7,24 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Preload forces the browser to download the font immediately with highest priority -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" as="style">
-  <!-- display=block prevents fallback text flashing -->
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" rel="stylesheet">
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <!-- Floating Navigation Bar -->
   <header class="navbar">
     <div class="site-container nav-inner">
-      <div class="brand">
+      <a href="index.html" class="brand brand-link">
         <div class="brand-name">Hazal İnce</div>
         <div class="brand-subtitle">Portfolio Website</div>
-      </div>
+      </a>
       <nav class="nav-links">
         <a href="#missions" class="nav-link">MISSIONS</a>
         <a href="#player" class="nav-link">PLAYER</a>
-        <a href="#map" class="nav-link">MAP</a>
+        <a href="map.html" class="nav-link">MAP</a>
       </nav>
     </div>
   </header>
@@ -32,158 +32,120 @@
   <!-- MAIN WRAPPER -->
   <main class="page-layout site-container">
 
-    <!-- CONTAINER 1: Hero Block -->
-    <section class="hero-block-container">
-      
-      <!-- Top Row: Year Label -->
-      <div class="hero-year-row">
-        <span class="year-label">2026</span>
+    <!-- COVER SECTION: Combined Cover Image -->
+    <section class="hero-section">
+      <div class="cover-container">
+        <img src="images/cover_combined.png" alt="Hazal Ince Portfolio Cover" class="cover-combined-img">
       </div>
-
-      <!-- Center Grid Stack: Avatar & Portfolio Text -->
-      <div class="hero-graphics-grid">
-        <img src="images/cover_avatar.png" alt="Avatar" class="cover_avatar-img">
-        <img src="images/cover_text_portfolio.png" alt="PORTFOLIO" class="cover_text_portfolio-img">
-      </div>
-
-      <!-- Bottom Row: Author Name & Disciplines -->
-      <div class="hero-meta-row">
-        <span class="author-label">Hazal İnce</span>
-        <span class="discipline-label">Game Arts | Audio-visual Arts | Architecture</span>
-      </div>
-
     </section>
 
-    <!-- CONTAINER 2: 3-Column Projects Showcase Grid -->
-    <section id="missions" class="showcase-block-container">
+    <!-- MISSIONS SECTION -->
+    <section id="missions" class="missions-section">
       
-      <!-- COLUMN 1: Games & Cinema -->
-      <div class="category-column">
-        <h2 class="category-title">Games & Cinema</h2>
-        
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Mate'Morphosis" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Mate'Morphosis</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Thus Spoke The Donke" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Thus Spoke The Donke</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="KraZ-258" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">KraZ-258</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Creature" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Creature</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Skeleton Animation" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Skeleton Animation</span>
-          </div>
-        </div>
+      <!-- ROW 1: Area Texts (Permanently 3 Columns) -->
+      <div class="areas-row">
+        <h2 class="area-title">Games & Cinema</h2>
+        <h2 class="area-title">Interactive Design</h2>
+        <h2 class="area-title">Architecture</h2>
       </div>
 
-      <!-- COLUMN 2: Interactive Design -->
-      <div class="category-column">
-        <h2 class="category-title">Interactive Design</h2>
+      <!-- ROW 2: Project Cards Grid (Permanently 3 Columns) -->
+      <div class="projects-grid">
         
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Monsanto Phantoms" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Monsanto Phantoms</span>
+        <!-- COLUMN 1: Games & Cinema -->
+        <div class="category-column">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Mate'Morphosis" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Thus Spoke The Donke" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="KraZ-258" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Creature" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Skeleton Animation" class="project-img">
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Pokemon Fusion with ML" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Pokemon Fusion with ML</span>
+        <!-- COLUMN 2: Interactive Design -->
+        <div class="category-column">
+          <a href="project.html" class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/monstanto_thumb.png" alt="Monsanto Phantoms" class="project-img">
+            </div>
+          </a>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Pokemon Fusion with ML" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Mind e-Scape" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="design.Unbound" class="project-img">
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Mind e-Scape" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Mind e-Scape</span>
+        <!-- COLUMN 3: Architecture -->
+        <div class="category-column">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Beyoglu Commons" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Ittai Gaia 4.0" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="4D2" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="City in Sequence" class="project-img">
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="images/project_thumbnail.png" alt="Entre la Ciudad y el Huerto" class="project-img">
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="design.Unbound" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">design.Unbound</span>
-          </div>
-        </div>
       </div>
-
-      <!-- COLUMN 3: Architecture -->
-      <div class="category-column">
-        <h2 class="category-title">Architecture</h2>
-        
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Beyoglu Commons" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Beyoglu Commons</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Ittai Gaia 4.0" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Ittai Gaia 4.0</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="4D2" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">4D2</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="City in Sequence" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">City in Sequence</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="images/project_thumbnail.png" alt="Entre la Ciudad y el Huerto" class="project-img">
-            <div class="project-overlay"></div>
-            <span class="project-title">Entre la Ciudad y el Huerto</span>
-          </div>
-        </div>
-      </div>
-
     </section>
 
   </main>

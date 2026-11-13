@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map | Hazal İnce</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="map.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar">
+    <div class="site-container nav-inner">
+      <a href="index.html" class="brand brand-link">
+        <div class="brand-name">Hazal İnce</div>
+        <div class="brand-subtitle">Portfolio Website</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#missions" class="nav-link">MISSIONS</a>
+        <a href="index.html#player" class="nav-link">PLAYER</a>
+        <a href="map.html" class="nav-link active-nav">MAP</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN MAP WRAPPER -->
+  <main class="map-page-layout site-container">
+
+    <section class="map-header">
+      <h1 class="map-page-title">Professional &amp; Studies</h1>
+      <p class="map-instruction">Select a city beacon on the map to inspect academic terms and studio missions.</p>
+    </section>
+
+    <!-- RELATIVE COORDINATE MAP CANVAS -->
+    <section class="map-canvas-wrapper">
+      <img src="images/map.png" alt="Europe and Turkey Coordinate Map" class="map-base-img">
+
+      <!-- 1. SAINT-ÉTIENNE, FRANCE -->
+      <button class="city-pin" style="top: 49.6%; left: 33.4%;" onclick="toggleCity('city-st-etienne')" aria-label="Saint-Étienne, France">
+        <span class="pin-pulse"></span>
+        <span class="pin-core"></span>
+      </button>
+
+      <!-- 2. KATOWICE, POLAND -->
+      <button class="city-pin" style="top: 44.5%; left: 47.4%;" onclick="toggleCity('city-katowice')" aria-label="Katowice, Poland">
+        <span class="pin-pulse"></span>
+        <span class="pin-core"></span>
+      </button>
+
+      <!-- 3. PORTO, PORTUGAL -->
+      <button class="city-pin" style="top: 53.8%; left: 22.3%;" onclick="toggleCity('city-porto')" aria-label="Porto, Portugal">
+        <span class="pin-pulse"></span>
+        <span class="pin-core"></span>
+      </button>
+
+      <!-- 4. VALÈNCIA, SPAIN -->
+      <button class="city-pin" style="top: 56.0%; left: 28.4%;" onclick="toggleCity('city-valencia')" aria-label="València, Spain">
+        <span class="pin-pulse"></span>
+        <span class="pin-core"></span>
+      </button>
+
+      <!-- 6. ANKARA, TURKEY -->
+      <button class="city-pin" style="top: 56.1%; left: 59.7%;" onclick="toggleCity('city-ankara')" aria-label="Ankara, Turkey">
+        <span class="pin-pulse"></span>
+        <span class="pin-core"></span>
+      </button>
+
+      <!-- ================= INFO CARDS LAYER ================= -->
+      <div class="city-cards-layer">
+
+        <!-- CARD 1: SAINT-ÉTIENNE -->
+        <article id="city-st-etienne" class="city-card align-right" style="top: 22%; left: 2%; max-width: 320px;">
+          <button class="card-close-btn" onclick="closeCity('city-st-etienne')" aria-label="Close">&times;</button>
+          <div class="entry-block">
+            <span class="entry-date">2026 - 2027 Fall Term</span>
+            <div class="entry-org">Université Jean Monnet (UJM), Saint-Étienne / France</div>
+            <h3 class="entry-role">EMJM DIGICREA</h3>
+            <p class="entry-desc">
+              Computer science, Web technologies, Gesture capture, Real-time techniques, Artistic project management, Video studio techniques, Multimedia installations, Prototyping, Special effects, History and theory of the Arts and new media, Digital Visual Design for Virtual Reality
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 2: KATOWICE -->
+        <article id="city-katowice" class="city-card align-left" style="top: 15%; left: 56%; max-width: 330px;">
+          <button class="card-close-btn" onclick="closeCity('city-katowice')" aria-label="Close">&times;</button>
+          <div class="entry-block">
+            <span class="entry-date">2027 - 2028 Fall Term</span>
+            <div class="entry-org">University of Silesia, Katowice / Poland</div>
+            <h3 class="entry-role">EMJM DIGICREA</h3>
+            <p class="entry-desc">
+              Tangible Interfaces and Physical Computing, Digital Creation Laboratory, Aesthetics and Digital Art Ecology, Creative Code and Algorithm in Art
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 3: PORTO -->
+        <article id="city-porto" class="city-card align-right" style="top: 55%; left: 1%; max-width: 310px;">
+          <button class="card-close-btn" onclick="closeCity('city-porto')" aria-label="Close">&times;</button>
+          <div class="entry-block">
+            <span class="entry-date">2026 - 2027 Spring Term</span>
+            <div class="entry-org">Universidade Católica Portuguesa (UCP), Porto / Portugal</div>
+            <h3 class="entry-role">EMJM DIGICREA</h3>
+            <p class="entry-desc">
+              Tangible Interfaces and Physical Computing, Digital Creation Laboratory, Aesthetics and Digital Art Ecology, Creative Code and Algorithm in Art
+            </p>
+          </div>
+        </article>
+
+        <!-- CARD 4: VALÈNCIA -->
+        <article id="city-valencia" class="city-card align-left" style="top: 68%; left: 24%; max-width: 310px;">
+          <button class="card-close-btn" onclick="closeCity('city-valencia')" aria-label="Close">&times;</button>
+          <div class="entry-block">
+            <span class="entry-date">2022 - 2023 Spring Term</span>
+            <div class="entry-org">Universitat Politècnica de València (UPV), València / Spain</div>
+            <h3 class="entry-role">Bachelor Erasmus Mobility</h3>
+          </div>
+        </article>
+
+        <!-- CARD 5: ISTANBUL -->
+        <article id="city-istanbul" class="city-card align-left" style="top: 50%; left: 68%; max-width: 330px;">
+          <button class="card-close-btn" onclick="closeCity('city-istanbul')" aria-label="Close">&times;</button>
+          
+          <div class="entry-block">
+            <span class="entry-date">May 2025 - February 2026</span>
+            <div class="entry-org">Art Generalist</div>
+            <h3 class="entry-role">WiseMonkeES</h3>
+            <p class="entry-desc">Working on "Thus Spake the Donke" &amp; "Mate'Morphosis"</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <div class="entry-block">
+            <span class="entry-date">February - March 2025</span>
+            <div class="entry-org">3D Artist Internship</div>
+            <h3 class="entry-role">Easy Clap Games</h3>
+            <p class="entry-desc">Character design for a horror game prototype</p>
+          </div>
+        </article>
+
+        <!-- CARD 6: ANKARA -->
+        <!-- CARD 6: ANKARA (Includes moved Istanbul entries first, then Ankara entries) -->
+        <article id="city-ankara" class="city-card align-left" style="top: 14%; left: 63%; max-width: 350px;">
+          <button class="card-close-btn" onclick="closeCity('city-ankara')" aria-label="Close">&times;</button>
+          
+          <!-- 1. WiseMonkeES (Moved from Istanbul) -->
+          <div class="entry-block">
+            <span class="entry-date">May 2025 - February 2026</span>
+            <div class="entry-org">Art Generalist</div>
+            <h3 class="entry-role">WiseMonkeES</h3>
+            <p class="entry-desc">Working on "Thus Spake the Donke" &amp; "Mate'Morphosis"</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 2. Easy Clap Games (Moved from Istanbul) -->
+          <div class="entry-block">
+            <span class="entry-date">February - March 2025</span>
+            <div class="entry-org">3D Artist Internship</div>
+            <h3 class="entry-role">Easy Clap Games</h3>
+            <p class="entry-desc">Character design for a horror game prototype</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 3. METU Architecture (Original Ankara) -->
+          <div class="entry-block">
+            <span class="entry-date">2019 - 2025</span>
+            <div class="entry-org">Middle East Technical University (METU), Ankara / Turkey</div>
+            <h3 class="entry-role">Bachelor of Architecture</h3>
+            <p class="entry-desc">GPA: 3.58 / 4.00</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 4. METU Fine Arts -->
+          <div class="entry-block">
+            <span class="entry-date">2020 - 2021 Fall Term</span>
+            <div class="entry-org">Head of Press Committee</div>
+            <h3 class="entry-role">METU Student Society of Fine Arts</h3>
+            <p class="entry-desc">Event planning and promotion, social media management</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 5. Esra Moza Architecture -->
+          <div class="entry-block">
+            <span class="entry-date">July - August 2024</span>
+            <div class="entry-org">Architectural Office Internship</div>
+            <h3 class="entry-role">Esra Moza Architecture</h3>
+            <p class="entry-desc">Design tasks for a private luxury housing</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 6. MESA Corporate Holding -->
+          <div class="entry-block">
+            <span class="entry-date">July - August 2023</span>
+            <div class="entry-org">Architectural Office Internship</div>
+            <h3 class="entry-role">MESA Corporate Holding</h3>
+            <p class="entry-desc">Design tasks of an automotive industry factory building &amp; sales offices for a touristic resort</p>
+          </div>
+
+          <div class="entry-divider"></div>
+
+          <!-- 7. Kuzu Group -->
+          <div class="entry-block">
+            <span class="entry-date">June - July 2022</span>
+            <div class="entry-org">Construction Site Internship</div>
+            <h3 class="entry-role">Kuzu Group</h3>
+            <p class="entry-desc">Design tasks for the new headquarters construction, from foundation laying through interior design</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Static Footer -->
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div class="footer-text">Portfolio Website . Hazal Ince</div>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://artstation.com" target="_blank" class="social-icon"><i class="fa-brands fa-artstation"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Coordinate Controller -->
+  <script>
+    function toggleCity(cardId) {
+      const targetCard = document.getElementById(cardId);
+      if (!targetCard) return;
+
+      const isMobile = window.innerWidth <= 768;
+      const isAlreadyOpen = targetCard.classList.contains('is-active');
+
+      if (isMobile) {
+        document.querySelectorAll('.city-card').forEach(card => {
+          card.classList.remove('is-active');
+        });
+
+        if (!isAlreadyOpen) {
+          targetCard.classList.add('is-active');
+        }
+      } else {
+        targetCard.classList.toggle('is-active');
+      }
+    }
+
+    function closeCity(cardId) {
+      const targetCard = document.getElementById(cardId);
+      if (targetCard) {
+        targetCard.classList.remove('is-active');
+      }
+    }
+  </script>
+
+</body>
+</html>
