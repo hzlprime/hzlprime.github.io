@@ -21,6 +21,8 @@ body {
   color: #ffffff;
   overflow-x: hidden;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-container {
@@ -91,8 +93,8 @@ header, .navbar {
   opacity: 0.7;
 }
 
-/* Page Layout Wrapper */
 .page-layout {
+  flex: 1; /* Pushes the footer to the bottom on short pages */
   margin-top: clamp(70px, 9vw, 100px);
   display: flex;
   flex-direction: column;
