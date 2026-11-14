@@ -93,8 +93,9 @@ header, .navbar {
   opacity: 0.7;
 }
 
+/* Page Layout Wrapper */
 .page-layout {
-  flex: 1; /* Pushes the footer to the bottom on short pages */
+  flex: 1;
   margin-top: clamp(70px, 9vw, 100px);
   display: flex;
   flex-direction: column;

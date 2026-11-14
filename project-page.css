@@ -1,9 +1,11 @@
+/* ================= GLOBAL RESET & BASE ================= */
 .brand-link {
   text-decoration: none;
   color: inherit;
 }
 
 .project-page-layout {
+  flex: 1;
   margin-top: clamp(80px, 12vw, 150px);
   display: flex;
   flex-direction: column;
@@ -11,6 +13,7 @@
   padding-bottom: clamp(60px, 10vw, 120px);
 }
 
+/* ================= HERO SECTION (1 Video or 1 Image) ================= */
 .project-hero {
   display: flex;
   flex-direction: column;
@@ -38,18 +41,24 @@
 }
 
 .project-hero-media {
-  width: clamp(400px, 100%, 1100px);
+  width: clamp(280px, 90vw, 1100px);
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
   margin: 0 auto;
+  background: #111622;
 }
 
+.project-hero-media iframe,
 .project-hero-media img {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  border: none;
+  display: block;
+  object-fit: cover;
 }
 
+/* ================= PROJECT OVERVIEW SECTION ================= */
 .project-overview-grid {
   display: flex;
   flex-wrap: wrap;
@@ -60,10 +69,9 @@
   background: rgba(95, 101, 110, 0.224);
   border: 3px solid rgba(255, 255, 255, 0.541);
   border-radius: 8px;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1100px;
+  max-width: 1100px; 
   margin: 0 auto;
+  width: 100%;
 }
 
 .project-specs {
@@ -115,50 +123,120 @@
   color: #e0e4ec;
 }
 
+/* ================= PROJECT GALLERY SECTION ================= */
 .project-gallery-section {
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 3vw, 40px);
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: clamp(20px, 4vw, 30px);
+  width: 100%;
 }
 
 .gallery-item {
   display: flex;
   flex-direction: column;
-  gap: clamp(30px, 4vw, 70px);
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
 }
 
-
-.gallery-img-box {
+/* Uniform 16:9 Media Box (Videos / 16:9 images) */
+.gallery-media-box {
   width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
+  background: #111622;
+  margin: 0 auto;
 }
 
-.gallery-img-box img {
+.gallery-media-box iframe,
+.gallery-media-box img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border: none;
+  display: block;
+  object-fit: cover;
+}
+
+/* SINGLE VIEW CUSTOM IMAGE: Matches exact width of single-view videos, automatic height */
+.gallery-natural-box {
+  width: 100%;
+  max-width: 1100px; /* Matches max container width constraint */
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-natural-box img {
+  width: 100%;
+  height: auto; /* Height is defined automatically by real proportions */
+  object-fit: contain;
   display: block;
 }
 
-.project-bottom-nav {
+/* DOUBLE VIEW UNIFORM 16:9 ROW */
+.gallery-row-double {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(260px, 42vw, 520px), 1fr));
+  gap: clamp(20px, 3vw, 30px);
+  width: 100%;
+}
+
+/* DOUBLE VIEW CUSTOM IMAGES ROW: Proportional side-by-side, auto row-height from tallest image, clamped gap */
+.gallery-row-natural {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(8px, 2.5vw, 10px); /* Gap clamps down meaningfully as screen scales */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-row-natural img {
+  flex: 1 1 0;
+  width: 0;              /* Lets flex engine calculate proper proportional widths */
+  height: auto;          /* Automatic height matching aspect ratios */
+  max-height: clamp(300px, 45vw, 650px); /* Row height scales and adjusts relative to the taller image */
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.media-caption {
+  font-size: clamp(0.8rem, 1.15vw, 1rem);
+  color: #a0aab8;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+/* ================= BOTTOM NAVIGATION ================= */
+.project-bottom-nav {
+  display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   padding-top: clamp(20px, 4vw, 32px);
   width: 100%;
-  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: clamp(12px, 2vw, 32px);
 }
 
 .bottom-nav-group {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 4vw, 40px);
+  gap: clamp(15px, 2.5vw, 40px);
 }
 
 .bottom-nav-left {
@@ -169,13 +247,12 @@
 .bottom-nav-right {
   align-items: flex-end;
   text-align: right;
-  justify-self: end;
 }
 
 .bottom-nav-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(0.7rem, 1.18vw, 1rem);
+  font-size: clamp(0.6rem, 1.1vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.08em;
   white-space: nowrap;
