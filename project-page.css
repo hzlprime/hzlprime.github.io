@@ -42,11 +42,10 @@
 
 .project-hero-media {
   width: clamp(280px, 90vw, 1100px);
-  aspect-ratio: 16 / 9;
+  height: auto;
   border-radius: 8px;
   overflow: hidden;
   margin: 0 auto;
-  background: #111622;
 }
 
 .project-hero-media iframe,
