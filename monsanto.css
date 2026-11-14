@@ -190,7 +190,7 @@
 .bottom-nav-group {
   display: flex;
   flex-direction: column;
-  gap: clamp(15px, 2.5vw, 40px);
+  gap: clamp(30px, 6vw, 60px);
 }
 
 .bottom-nav-left {
