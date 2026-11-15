@@ -1,0 +1,128 @@
+/* ================= PLAYER PAGE LAYOUT ================= */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.player-page-layout {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: clamp(10px, 2.5vw, 40px);
+  padding-right: clamp(10px, 2.5vw, 40px);
+  margin: clamp(80px, 10vw, 120px) auto 0 auto;
+  padding-bottom: clamp(60px, 10vw, 120px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 5vw, 60px);
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active-nav {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 2px;
+}
+
+/* ================= ABOUT BOX ================= */
+.about-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: clamp(28px, 4vw, 56px);
+  background: rgba(95, 101, 110, 0.224);
+  border: 3px solid rgba(255, 255, 255, 0.541);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.about-title {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: clamp(12px, 2vw, 20px);
+  text-transform: uppercase;
+}
+
+.profile-img-wrapper {
+  flex: 1 1 320px;
+  max-width: 440px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.about-content {
+  flex: 2 1 min(100%, 600px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.about-text {
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #e0e4ec;
+}
+
+/* ================= CONNECT SECTION ================= */
+.connect-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vw, 18px);
+  margin-top: clamp(24px, 3.5vw, 40px);
+  padding-top: clamp(18px, 2.5vw, 28px);
+}
+
+.connect-heading {
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-align: right;
+}
+
+.connect-links {
+  display: flex;
+  flex-wrap: wrap; /* Allows double row wrapping on smaller screens */
+  justify-content: flex-end;
+  gap: clamp(12px, 2vw, 24px);
+  align-items: center;
+  width: 100%;
+}
+
+.connect-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.connect-link:hover {
+  opacity: 0.75;
+}
+
+.connect-link i {
+  color: #a0aab8;
+}
