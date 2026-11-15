@@ -7,6 +7,7 @@ body {
 
 .player-page-layout {
   flex: 1;
+  box-sizing: border-box;
   width: 100%;
   max-width: 1440px;
   padding-left: clamp(10px, 2.5vw, 40px);
@@ -16,6 +17,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(30px, 5vw, 60px);
+
+  /* Makes 1cqw = 1% of this column's width (capped at 1440px like the page).
+     Everything in the about box is sized in cqw, so it all scales together
+     and stops growing at exactly the same point. */
+  container-type: inline-size;
 }
 
 .brand-link {
@@ -28,56 +34,79 @@ body {
   padding-bottom: 2px;
 }
 
-/* ================= ABOUT BOX ================= */
+/* ================= ABOUT BOX =================
+   DESKTOP: [ image 1fr ][ text 3.25fr ]
+   The image is never cropped: it keeps its own proportions. The text column
+   stretches to the image's height (title at the top, connect links at the
+   bottom), so the two read as one block.
+
+   SMALL:   [ text  ]
+            [ image ]
+   Below the breakpoint at the bottom of this file, text goes on top and
+   the image sits underneath.
+*/
 .about-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: clamp(28px, 4vw, 56px);
+  /* ---- knobs you can tweak ---- */
+  --text-ratio: 3.25fr; /* text column width vs. the image's 1fr (lower = bigger image) */
+  --text-scale: 1;     /* multiplies all desktop text sizes + spacing (try 0.8 to shrink the text block) */
+
+  /* ---- sizes: all proportional to the page width ---- */
+  --fs-title: calc(2.1cqw * var(--text-scale));
+  --fs-body: calc(1.35cqw * var(--text-scale));
+  --fs-heading: calc(1.5cqw * var(--text-scale));
+  --fs-link: max(0.75rem, calc(1.15cqw * var(--text-scale)));
+  --space: calc(1.3cqw * var(--text-scale));
+
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--text-ratio));
+  align-items: stretch;
+  gap: 4cqw;
+  padding: 4cqw;
   background: rgba(95, 101, 110, 0.224);
   border: 3px solid rgba(255, 255, 255, 0.541);
   border-radius: 8px;
-  width: 100%;
 }
 
-.about-title {
-  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  margin-bottom: clamp(12px, 2vw, 20px);
-  text-transform: uppercase;
-}
-
+/* Image column: natural proportions, centered if the text is taller */
 .profile-img-wrapper {
-  flex: 1 1 320px;
-  max-width: 440px;
-  width: 100%;
-  border-radius: 8px;
+  align-self: center;
+  min-width: 0;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .profile-img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: cover;
 }
 
+/* Text column */
 .about-content {
-  flex: 2 1 min(100%, 600px);
-  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2vw, 24px);
+  justify-content: space-between; /* if the image is taller, extra space is shared evenly */
+  gap: var(--space);
+}
+
+.about-title {
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .about-text {
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  margin: 0;
+  font-size: var(--fs-body);
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.6;
   color: #e0e4ec;
 }
 
@@ -85,13 +114,14 @@ body {
 .connect-section {
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.8vw, 18px);
-  margin-top: clamp(24px, 3.5vw, 40px);
-  padding-top: clamp(18px, 2.5vw, 28px);
+  gap: calc(var(--space) * 0.7);
+  margin-top: var(--space);
+  padding-top: calc(var(--space) * 0.8);
 }
 
 .connect-heading {
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  margin: 0;
+  font-size: var(--fs-heading);
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #ffffff;
@@ -100,17 +130,17 @@ body {
 
 .connect-links {
   display: flex;
-  flex-wrap: wrap; /* Allows double row wrapping on smaller screens */
+  flex-wrap: wrap;
   justify-content: flex-end;
-  gap: clamp(12px, 2vw, 24px);
   align-items: center;
+  gap: calc(var(--space) * 1.2);
   width: 100%;
 }
 
 .connect-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-size: var(--fs-link);
   font-weight: 400;
   display: inline-flex;
   align-items: center;
@@ -125,4 +155,32 @@ body {
 
 .connect-link i {
   color: #a0aab8;
+}
+
+/* ================= STACKED LAYOUT =================
+   Once the page column is narrower than 960px the text would be too small
+   to read, so instead of shrinking further we stack: text on top,
+   image below. Text sizes switch to normal readable clamp() values. */
+@container (max-width: 960px) {
+  .about-box {
+    --fs-title: clamp(1.15rem, 0.8rem + 2.2cqw, 1.6rem);
+    --fs-body: clamp(0.875rem, 0.55rem + 1.4cqw, 1.05rem);
+    --fs-heading: clamp(0.95rem, 0.7rem + 1.4cqw, 1.2rem);
+    --fs-link: clamp(0.8rem, 0.65rem + 0.9cqw, 0.95rem);
+    --space: clamp(10px, 1.8cqw, 16px);
+
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(20px, 4cqw, 36px);
+    padding: clamp(18px, 4cqw, 36px);
+  }
+
+  .about-content {
+    order: 1;
+  }
+
+  .profile-img-wrapper {
+    order: 2;
+    justify-self: center;
+    width: min(100%, clamp(14rem, 45cqw, 26rem));
+  }
 }
