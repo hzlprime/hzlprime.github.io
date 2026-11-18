@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duck Collecting Game | Hazal İnce</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project-page.css">
+
+  <link rel="icon" type="image/png" href="images/my_favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="site-container nav-inner">
+      <a href="index.html" class="brand brand-link">
+        <div class="brand-name">Hazal İnce</div>
+        <div class="brand-subtitle">Portfolio Website</div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#missions" class="nav-link">MISSIONS</a>
+        <a href="player.html" class="nav-link">PLAYER</a>
+        <a href="map.html" class="nav-link">MAP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page-layout site-container">
+
+    <section class="project-hero">
+      <div class="project-header-meta">
+        <span class="project-category">CUSTOM CONTROLLER PROPOSAL</span>
+      </div>
+      
+      <h1 class="project-main-title">DUCK COLLECTING GAME W/ TEENSY</h1>
+      
+      <div class="project-hero-media">
+        <iframe 
+          src="https://www.youtube.com/embed/0hTkTm2cIak"
+          title="Duck Collecting Game Playtest" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="project-overview-grid">
+      <aside class="project-specs">
+        <div class="spec-item">
+          <span class="spec-label">Project Type</span>
+          <span class="spec-value">Custom Controller Proposal for a Mini Game</span>
+          <span class="spec-value">EMJM Digicrea | Université Jean Monnet</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Date</span>
+          <span class="spec-value">October 2026</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Location</span>
+          <span class="spec-value">Saint-Étienne, France</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Role</span>
+          <span class="spec-value">Individual Project</span>
+        </div>
+      </aside>
+
+      <div class="project-narrative">
+        <h2 class="section-heading">ABOUT THE PROJECT</h2>
+        <p class="narrative-text">
+          A mini game where you play as a boat to collect as many plastic ducks as you can, in a minute timer.
+        </p>
+        <p class="narrative-text">
+          The steering of the boat is mapped with MIDI inputs through a custom remote controller device, created with a Teensy.
+        </p>
+        
+        <p class="narrative-text">
+          This game was made in three days, for the TU3B Gesture Capture - Hardware Control Assignment, plus an additional day for the "making of" video.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-gallery-section">
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <div class="gallery-media-box">
+            <iframe 
+              src="https://www.youtube.com/embed/iVpPAINsWFc"
+              title="Making of the Duck Collecting Game" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </figure>
+
+        <figure class="gallery-item"> 
+          <figcaption class="media-caption" style="text-align: center;" style="color: #ffffffcc;">
+            The Making of the Duck Collecting Game
+          </figcaption>
+        </figure>
+
+        <!-- Double View: Slide 1 and 2 -->
+        <figure class="gallery-item">
+          <div class="gallery-row-double">
+            <div class="gallery-natural-box">
+              <img src="images/boat_1.jpg" alt="Duck Collecting Game Slide 1">
+            </div>
+            <div class="gallery-natural-box">
+              <img src="images/boat_2.jpg" alt="Duck Collecting Game Slide 2">
+            </div>
+          </div>
+        </figure>
+        
+
+        <figure class="gallery-item"> 
+          <figcaption class="media-caption" style="text-align: center;" style="color: #ffffffcc;">
+            Teensy Device Assembled
+          </figcaption>
+          <figcaption class="media-caption" style="text-align: center;" style="color: #ffffffb6;"">
+            Two potentiometers for steering and speeding the boat, one button for collecting the ducks.
+          </figcaption>
+        </figure>
+
+        <!-- Single View: Slide 3 -->
+        <figure class="gallery-item">
+          <div class="gallery-natural-box">
+              <img src="images/boat_3.png" alt="Duck Collecting Game Slide 3">
+          </div>
+        </figure>
+
+        <figure class="gallery-item">
+          <figcaption class="media-caption" style="text-align: center;" style="color: #ffffffb6;"">
+            Mapped MIDI values as remote controller inputs.
+          </figcaption>
+        </figure>
+        
+
+      </div>
+    </section>
+    
+
+    <nav class="project-bottom-nav">
+      <div class="bottom-nav-group bottom-nav-left">
+      </div>
+      <div class="bottom-nav-group bottom-nav-right">
+        <a href="dialect.html" class="bottom-nav-link">Next in Games &amp; Cinema <span class="nav-arrow single-arrow right-arrow"></span>
+        </a>
+        <a href="monsanto.html" class="bottom-nav-link">Next in All <span class="nav-arrow double-arrow right-arrow"></span>
+        </a>
+      </div>
+    </nav>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="site-container footer-inner">
+      <div class="footer-text">Portfolio Website . Hazal Ince</div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/hbince" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.artstation.com/hzlprime" target="_blank" class="social-icon"><i class="fa-brands fa-artstation"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
